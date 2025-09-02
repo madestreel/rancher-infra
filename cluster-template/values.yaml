@@ -7,7 +7,8 @@ cluster:
   labels: {}
 
   # specify cluster annotations
-  annotations: {}
+  annotations:
+    catalog.cattle.io/type: cluster-template
 
 # specify cloud credential secret name, do not need to be provided if using custom driver
 cloudCredentialSecretName: ""
