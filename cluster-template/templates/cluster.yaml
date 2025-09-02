@@ -10,7 +10,7 @@ metadata:
 {{ toYaml .Values.cluster.annotations | indent 4 }}
   {{- end }}
   name: {{ .Values.cluster.name }}
-  namespace: fleet-local
+  namespace: fleet-default
 spec:
   {{- if .Values.cloudCredentialSecretName }}
   cloudCredentialSecretName: {{ .Values.cloudCredentialSecretName }}
