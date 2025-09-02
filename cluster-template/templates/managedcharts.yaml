@@ -3,7 +3,7 @@ apiVersion: management.cattle.io/v3
 kind: ManagedChart
 metadata:
   name: monitoring-crd-{{ .Values.cluster.name }}
-  namespace: fleet-default
+  namespace: fleet-local
 spec:
   chart: "rancher-monitoring-crd"
   repoName: "rancher-charts"
@@ -21,7 +21,7 @@ apiVersion: management.cattle.io/v3
 kind: ManagedChart
 metadata:
   name: monitoring-{{ .Values.cluster.name }}
-  namespace: fleet-default
+  namespace: fleet-local
 spec:
   chart: "rancher-monitoring"
   repoName: "rancher-charts"

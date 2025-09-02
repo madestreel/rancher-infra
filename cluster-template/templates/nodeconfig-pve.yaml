@@ -4,7 +4,7 @@ apiVersion: rke-machine-config.cattle.io/v1
 kind: PveConfig
 metadata:
   name: {{ $nodepool.name }}
-  namespace: fleet-default
+  namespace: fleet-local
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}
 isoDevice: {{ $nodepool.isoDevice }}
@@ -23,7 +23,7 @@ apiVersion: rke-machine-config.cattle.io/v1
 kind: PveConfig
 metadata:
   name: {{ $nodepool.name }}
-  namespace: fleet-default
+  namespace: fleet-local
 fullClone: {{ $nodepool.fullClone }}
 insecureTls: {{ $nodepool.insecureTLs }}
 isoDevice: {{ $nodepool.isoDevice }}

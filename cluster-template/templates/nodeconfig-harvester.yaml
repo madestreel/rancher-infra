@@ -4,7 +4,7 @@ apiVersion: rke-machine-config.cattle.io/v1
 kind: HarvesterConfig
 metadata:
   name: {{ $nodepool.name }}
-  namespace: fleet-default
+  namespace: fleet-local
 diskSize: {{ $nodepool.diskSize | quote }}
 diskBus: {{ $nodepool.diskBus }}
 cpuCount: {{ $nodepool.cpuCount | quote }}
@@ -21,7 +21,7 @@ apiVersion: rke-machine-config.cattle.io/v1
 kind: HarvesterConfig
 metadata:
   name: {{ $nodepool.name }}
-  namespace: fleet-default
+  namespace: fleet-local
 diskSize: {{ $nodepool.diskSize | quote }}
 diskBus: {{ $nodepool.diskBus }}
 cpuCount: {{ $nodepool.cpuCount | quote }}
