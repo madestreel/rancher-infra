@@ -15,7 +15,7 @@ cloudCredentialSecretName: ""
 # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 cloudprovider: "digitalocean"
 
-kubernetesVersion: ""
+kubernetesVersion: v1.33.3+rke2r1
 
 # enable local auth endpoint
 localClusterAuthEndpoint:
