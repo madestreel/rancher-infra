@@ -110,7 +110,6 @@ spec:
 {{ toYaml $nodepool.machineDeploymentAnnotations | indent 8 }}
       {{- end }}
     {{- end }}
-    {{- end }}
     machineGlobalConfig:
       # Path to the file that defines the audit policy configuration
       # audit-policy-file: ""
