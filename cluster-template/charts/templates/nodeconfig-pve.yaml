@@ -1,0 +1,39 @@
+{{- if eq .Values.cloudprovider "pve" }}
+{{- range $index, $nodepool := .Values.nodepools }}
+apiVersion: rke-machine-config.cattle.io/v1
+kind: PveConfig
+metadata:
+  name: {{ $nodepool.name }}
+  namespace: fleet-default
+fullClone: {{ $nodepool.fullClone }}
+insecureTls: {{ $nodepool.insecureTLs }}
+isoDevice: {{ $nodepool.isoDevice }}
+memory: {{ $nodepool.memorySize }}
+networkInterface: {{ $nodepool.networkInterface }}
+processorCores: {{ $nodepool.processorCores }}
+processorSockets: {{ $nodepool.processorSockets }}
+resourcePool: {{ $nodepool.resourcePool }}
+sshUser: {{ $nodepool.sshUser }}
+template: {{ $nodepool.template }}
+---
+{{- end }}
+{{ $nodepool := .Values.nodepool }}
+{{- if $nodepool }}
+apiVersion: rke-machine-config.cattle.io/v1
+kind: PveConfig
+metadata:
+  name: {{ $nodepool.name }}
+  namespace: fleet-default
+fullClone: {{ $nodepool.fullClone }}
+insecureTls: {{ $nodepool.insecureTLs }}
+isoDevice: {{ $nodepool.isoDevice }}
+memory: {{ $nodepool.memorySize }}
+networkInterface: {{ $nodepool.networkInterface }}
+processorCores: {{ $nodepool.processorCores }}
+processorSockets: {{ $nodepool.processorSockets }}
+resourcePool: {{ $nodepool.resourcePool }}
+sshUser: {{ $nodepool.sshUser }}
+template: {{ $nodepool.template }}
+{{- end }}
+{{- end }}
+
