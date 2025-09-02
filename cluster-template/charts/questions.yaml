@@ -24,7 +24,7 @@ questions:
       - pve
     group: "General"
   - variable: kubernetesVersion
-    default: v1.32.3+rke2r1
+    default: v1.33.3+rke2r1
     description: "Specify Kubernetes version"
     label: "Kubernetes Version"
     type: enum
