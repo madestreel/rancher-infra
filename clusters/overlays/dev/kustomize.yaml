@@ -1,5 +1,0 @@
-cluster:
-  name: development-pve
-
-  labels:
-    env: dev

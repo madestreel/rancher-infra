@@ -5,10 +5,11 @@ helm:
     # cluster specific values
     cluster:
       # specify cluster name
-      name: default-cluster
+      name: development-pve
 
       # specify cluster labels
       labels:
+        env: dev
 
       # specify cluster annotations
       annotations:
