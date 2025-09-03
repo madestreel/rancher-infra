@@ -106,7 +106,7 @@ helm:
         fullClone: true
         insecureTls: false
         isoDevice: scsi1
-        memory: "8000"
+        memory: "12000"
         networkInterface: net0
         processorCores: "4"
         processorSockets: "1"
@@ -174,7 +174,7 @@ helm:
         fullClone: true
         insecureTls: false
         isoDevice: scsi1
-        memory: "8000"
+        memory: "12000"
         networkInterface: net0
         processorCores: "4"
         processorSockets: "1"
