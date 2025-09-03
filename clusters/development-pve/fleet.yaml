@@ -10,6 +10,7 @@ helm:
       # specify cluster labels
       labels:
         env: dev
+        topologyKey: topology.kubernetes.io/zone
 
       # specify cluster annotations
       annotations:
