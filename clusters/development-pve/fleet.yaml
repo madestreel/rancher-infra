@@ -112,4 +112,6 @@ helm:
         processorSockets: "1"
         resourcePool: rancher-pool
         sshUser: root
+        displayName: pool1
+        paused: false
         template: "183"
