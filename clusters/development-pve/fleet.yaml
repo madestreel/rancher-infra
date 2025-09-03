@@ -10,7 +10,6 @@ helm:
       # specify cluster labels
       labels:
         env: dev
-        topologyKey: topology.kubernetes.io/zone
 
       # specify cluster annotations
       annotations:
@@ -53,7 +52,8 @@ helm:
         worker: true
 
         # specify node labels
-        labels: {}
+        labels:
+          topology.kubernetes.io/zone: "pve"
 
         # specify node taints
         taints: {}
@@ -120,7 +120,8 @@ helm:
         worker: true
 
         # specify node labels
-        labels: {}
+        labels:
+          topology.kubernetes.io/zone: "pve"
 
         # specify node taints
         taints: {}
