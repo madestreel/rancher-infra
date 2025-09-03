@@ -1,4 +1,4 @@
-namespace: fleet-local
+namespace: fleet-default
 helm:
   chart: https://github.com/madestreel/rancher-cluster-template/releases/download/1.0.0/cluster-template-0.0.1.tgz
   values:
