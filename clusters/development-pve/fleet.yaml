@@ -5,10 +5,11 @@ helm:
     # cluster specific values
     cluster:
       # specify cluster name
-      name: template-rke2
+      name: development-pve
 
       # specify cluster labels
-      labels: {}
+      labels:
+        env: dev
 
       # specify cluster annotations
       annotations: {}
@@ -32,7 +33,7 @@ helm:
 
     # enable monitoring
     monitoring:
-      enabled: false
+      enabled: true
       # specify which version to install, can be semver range. If version is empty or is semver range, it will pick up the latest version.
       # version: ""
       # specify cutsom values set
@@ -100,7 +101,7 @@ helm:
         # specify machineDeployment annotations
         # machineDeploymentAnnotations: {}
 
-        name: pve-nodepool-1
+        name: pool1
         fullClone: true
         insecureTls: false
         isoDevice: scsi1
