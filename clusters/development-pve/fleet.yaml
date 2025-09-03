@@ -12,7 +12,7 @@ helm:
         env: dev
 
       # specify cluster annotations
-      annotations: {}
+      annotations: catalog.cattle.io/type:cluster-template
 
     # specify cloud provider, options are amazonec2, digitalocean, azure, vsphere or custom
 
