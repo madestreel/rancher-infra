@@ -113,7 +113,6 @@ helm:
         resourcePool: rancher-pool
         sshUser: root
         displayName: pool1
-        paused: false
         template: "183"
       - etcd: false
         controlplane: false
