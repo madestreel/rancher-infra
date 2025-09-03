@@ -181,5 +181,4 @@ helm:
         resourcePool: rancher-pool
         sshUser: root
         displayName: pool2
-        paused: false
         template: "183"
