@@ -43,7 +43,4 @@ helm:
   releaseName: longhorn
   values:
     persistence:
-      defaultClass: true
-      defaultClassReplicaCount: 3
-    defaultSettings:
-      backupTarget: ""
+      defaultClassReplicaCount: 1
