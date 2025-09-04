@@ -43,9 +43,9 @@ helm:
   releaseName: longhorn
   values:
     persistence:
-      defaultClassReplicaCount: 1
+      defaultClassReplicaCount: 2
     defaultSettings:
-      defaultReplicaCount: 1
+      defaultReplicaCount: 2
     csi:
       attacherReplicaCount: 1
       provisionerReplicaCount: 1
