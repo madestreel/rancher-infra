@@ -114,7 +114,7 @@ helm:
         resourcePool: rancher-pool
         sshUser: root
         displayName: pool1
-        template: "165"
+        template: "171"
       - etcd: false
         controlplane: false
         worker: true
@@ -182,4 +182,4 @@ helm:
         resourcePool: rancher-pool
         sshUser: root
         displayName: pool2
-        template: "165"
+        template: "171"
