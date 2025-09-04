@@ -46,6 +46,7 @@ helm:
       defaultClassReplicaCount: 2
     defaultSettings:
       defaultReplicaCount: 2
+      storageOverProvisioningPercentage: 200
     csi:
       attacherReplicaCount: 1
       provisionerReplicaCount: 1
