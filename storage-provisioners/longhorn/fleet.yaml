@@ -1,0 +1,11 @@
+namespace: fleet-default
+helm:
+  chart: longhorn
+  repo: https://charts.rancher.io
+  version: 1.9.1
+  values:
+    persistence:
+      defaultClass: true
+      defaultClassReplicaCount: 3
+    defaultSettings:
+      backupTarget: ""
