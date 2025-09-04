@@ -1,7 +1,7 @@
 namespace: fleet-default
 helm:
   chart: longhorn
-  repo: https://charts.rancher.io
+  repo: https://charts.longhorn.io
   version: 1.9.1
   values:
     persistence:
