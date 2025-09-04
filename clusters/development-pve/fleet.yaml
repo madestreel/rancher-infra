@@ -104,7 +104,7 @@ helm:
         # machineDeploymentAnnotations: {}
 
         name: pool1
-        fullClone: true
+        fullClone: false
         insecureTls: false
         isoDevice: scsi1
         memory: "12000"
@@ -114,7 +114,7 @@ helm:
         resourcePool: rancher-pool
         sshUser: root
         displayName: pool1
-        template: "183"
+        template: "158"
       - etcd: false
         controlplane: false
         worker: true
@@ -172,7 +172,7 @@ helm:
         # machineDeploymentAnnotations: {}
 
         name: pool2
-        fullClone: true
+        fullClone: false
         insecureTls: false
         isoDevice: scsi1
         memory: "12000"
@@ -182,4 +182,4 @@ helm:
         resourcePool: rancher-pool
         sshUser: root
         displayName: pool2
-        template: "183"
+        template: "158"
