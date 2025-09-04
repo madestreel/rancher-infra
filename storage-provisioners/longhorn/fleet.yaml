@@ -46,3 +46,16 @@ helm:
       defaultClassReplicaCount: 1
     defaultSettings:
       defaultReplicaCount: 1
+    csi:
+      attacherReplicaCount: 1
+    provisionerReplicaCount: 1
+    resizerReplicaCount: 1
+    snapshotterReplicaCount: 1
+    longhornUI:
+      replicas: 1
+    longhornConversionWebhook:
+      replicas: 1
+    longhornAdmissionWebhook:
+      replicas: 1
+    longhornRecoveryBackend:
+      replicas: 1
