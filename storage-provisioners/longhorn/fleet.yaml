@@ -44,3 +44,5 @@ helm:
   values:
     persistence:
       defaultClassReplicaCount: 1
+    defaultSettings:
+      defaultReplicaCount: 1
