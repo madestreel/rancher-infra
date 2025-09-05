@@ -4,6 +4,7 @@ metadata:
   name: kyverno:agrocd-create-secret
   labels:
     rbac.kyverno.io/aggregate-to-admission-controller: true
+    rbac.kyverno.io/aggregate-to-background-controller: true
 rules:
   - apiGroups: [""] # <-- empty string for core API
     resources: ["secrets"]
