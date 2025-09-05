@@ -9,7 +9,7 @@ helm:
       rbac:
         clusterRole:
           extraResources:
-            - apiGroup:
+            - apiGroups:
                 - core
               resources:
                 - secrets
