@@ -1,0 +1,8 @@
+apiVersion: catalog.cattle.io/v1
+kind: ClusterRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Node Driver for Proxmox Virtual Environment
+  name: pve-node-driver
+spec:
+  url: https://stellatarum.github.io/docker-machine-driver-pve

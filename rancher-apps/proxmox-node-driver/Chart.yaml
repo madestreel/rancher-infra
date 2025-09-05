@@ -1,0 +1,4 @@
+apiVersion: v2
+name: pve-node-driver
+version: 1.0.0
+description: Node Driver for Proxmox Virtual Environment
