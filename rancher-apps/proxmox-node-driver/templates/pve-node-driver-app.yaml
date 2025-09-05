@@ -15,6 +15,11 @@ metadata:
 spec:
   plugin:
     endpoint: https://stellatarum.github.io/docker-machine-driver-pve/extensions/pve-node-driver/1.1.0
+    metadata:
+      catalog.cattle.io/display-name: Proxmox VE Node Driver
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
     name: pve-node-driver
     noAuth: false
     noCache: false
