@@ -10,6 +10,17 @@ rules:
     resources: ["secrets"]
     verbs: ["get", "list", "watch", "create", "update", "delete"]
 
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kyverno:agrocd-all-secret
+  labels:
+    rbac.kyverno.io/aggregate-to-background-controller: "true"
+rules:
+  - apiGroups: ["provisioning.cattle.io"] # <-- empty string for core API
+    resources: ["clusters"]
+    verbs: ["get", "list", "watch"]
+
 ---
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
