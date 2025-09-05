@@ -1,8 +1,13 @@
 defaultNamespace: cattle-system
 
+git:
+  repo: https://github.com/Stellatarum/docker-machine-driver-pve.git
+  branch: main
+  paths:
+    - . # the chart is at the root of the repo
+
 helm:
   releaseName: proxmox-node-driver
-  chart: https://github.com/Stellatarum/docker-machine-driver-pve/tree/v1.1.0/deploy/charts/pve-node-driver
   values:
     nodeDriver:
       url: "https://stellatarum.github.io/docker-machine-driver-pve"
