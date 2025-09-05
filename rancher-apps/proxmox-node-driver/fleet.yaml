@@ -1,0 +1,10 @@
+defaultNamespace: cattle-system
+
+helm:
+  chart: .
+  releaseName: proxmox-node-driver
+
+# Optionally target only specific clusters
+targetCustomizations:
+  - name: local
+    clusterName: local
