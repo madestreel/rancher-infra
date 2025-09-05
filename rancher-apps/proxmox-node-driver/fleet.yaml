@@ -1,10 +1,13 @@
 defaultNamespace: cattle-system
 
 helm:
-  chart: .
   releaseName: proxmox-node-driver
-
-# Optionally target only specific clusters
+  chart: https://github.com/Stellatarum/docker-machine-driver-pve/tree/v1.1.0/deploy/charts/pve-node-driver
+  values:
+    nodeDriver:
+      url: "https://stellatarum.github.io/docker-machine-driver-pve"
+    uiPlugin:
+      endpoint: "https://stellatarum.github.io/docker-machine-driver-pve"
 targetCustomizations:
   - name: local
     clusterName: local
