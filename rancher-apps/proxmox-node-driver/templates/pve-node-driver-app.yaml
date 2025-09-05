@@ -6,3 +6,17 @@ metadata:
   name: pve-node-driver
 spec:
   url: https://stellatarum.github.io/docker-machine-driver-pve
+---
+apiVersion: catalog.cattle.io/v1
+kind: UIPlugin
+metadata:
+  name: pve-node-driver
+  namespace: cattle-ui-plugin-system
+spec:
+  plugin:
+    endpoint: https://stellatarum.github.io/docker-machine-driver-pve/extensions/pve-node-driver/1.1.0
+    name: pve-node-driver
+    noAuth: false
+    noCache: false
+    version: 1.1.0
+
