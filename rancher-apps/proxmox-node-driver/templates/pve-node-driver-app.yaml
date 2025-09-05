@@ -6,3 +6,28 @@ metadata:
   name: pve-node-driver
 spec:
   url: https://stellatarum.github.io/docker-machine-driver-pve
+---
+apiVersion: catalog.cattle.io/v1
+kind: UIPlugin
+metadata:
+  annotations:
+    meta.helm.sh/release-name: pve-node-driver
+    meta.helm.sh/release-namespace: cattle-ui-plugin-system
+  labels:
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: pve-node-driver
+    app.kubernetes.io/version: 1.1.0
+  name: pve-node-driver
+  namespace: cattle-ui-plugin-system
+spec:
+  plugin:
+    endpoint: https://stellatarum.github.io/docker-machine-driver-pve/extensions/pve-node-driver/1.1.0
+    metadata:
+      catalog.cattle.io/display-name: Proxmox VE Node Driver
+      catalog.cattle.io/kube-version: '>= 1.16.0-0'
+      catalog.cattle.io/rancher-version: '>= 2.10.0-0'
+      catalog.cattle.io/ui-extensions-version: '>= 3.0.0 < 4.0.0'
+    name: pve-node-driver
+    noAuth: false
+    noCache: false
+    version: 1.1.0
