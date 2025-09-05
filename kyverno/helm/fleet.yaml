@@ -4,3 +4,15 @@ helm:
   repo: https://kyverno.github.io/kyverno/
   version: 3.5.1
   releaseName: kyverno
+  values:
+    admissionController:
+      rbac:
+        clusterRole:
+          extraResources:
+            - apiGroup:
+                - ""
+              resources:
+                - secrets
+              verbs:
+                - get
+                - list
