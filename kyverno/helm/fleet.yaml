@@ -10,7 +10,7 @@ helm:
         clusterRole:
           extraResources:
             - apiGroup:
-                - ""
+                - core
               resources:
                 - secrets
               verbs:
