@@ -1,3 +1,4 @@
+defaultNamespace: kyverno
 targetCustomizations:
   - name: local
     clusterSelector:
