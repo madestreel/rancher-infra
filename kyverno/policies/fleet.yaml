@@ -1,4 +1,3 @@
-defaultNamespace: argocd
 targetCustomizations:
   - name: local
     clusterSelector:
