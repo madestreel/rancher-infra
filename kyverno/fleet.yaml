@@ -1,0 +1,6 @@
+defaultNamespace: default
+targetCustomizations:
+  - name: local
+    clusterSelector:
+      matchLabels:
+        management.cattle.io/cluster-display-name: local
