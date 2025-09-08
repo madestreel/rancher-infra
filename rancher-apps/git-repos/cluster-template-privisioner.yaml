@@ -8,3 +8,17 @@ spec:
   refreshInterval: 1
   gitRepo: https://github.com/madestreel/rancher-cluster-template
   gitBranch: master
+
+---
+apiVersion: catalog.cattle.io/v1
+kind: ClusterRepo
+metadata:
+  name: single-node-development
+  annotations:
+    field.cattle.io/description: Single node cluster template
+spec:
+  refreshInterval: 1
+  gitRepo: https://github.com/madestreel/rancher-cluster-template
+  gitBranch: master
+  paths:
+    - ./single-node-development
