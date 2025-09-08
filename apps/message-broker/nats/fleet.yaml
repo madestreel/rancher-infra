@@ -45,20 +45,6 @@ helm:
           - op: add
             path: "/workingDir"
             value: /tmp
-      deployment:
-        patch:
-      ${ if hasKey .ClusterLabels "oam-node" }
-          - op: add
-            path: "/spec/template/spec/nodeSelector"
-            value:
-              oam-node: oam
-          - op: add
-            path: "/spec/template/spec/tolerations"
-            value:
-              - key: "oam-node"
-                operator: "Exists"
-                effect: "NoSchedule"
-      {{- end }}
 
     promExporter:
       enabled: true
