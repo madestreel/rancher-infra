@@ -1,0 +1,19 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Git repo to deploy the scp
+  name: scp
+  namespace: fleet-default
+spec:
+  branch: main
+  paths:
+    - apps/scp
+  correctDrift:
+    enabled: true
+  #    force: boolean
+  #    keepFailHistory: boolean
+  pollingInterval: 15s
+  repo: https://github.com/madestreel/rancher-infra
+  targets:
+    - clusterSelector: {}
