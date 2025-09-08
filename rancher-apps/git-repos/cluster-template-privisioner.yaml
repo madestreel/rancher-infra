@@ -1,0 +1,10 @@
+apiVersion: catalog.cattle.io/v1
+kind: ClusterRepo
+metadata:
+  name: generic-cluster-template
+  annotations:
+    field.cattle.io/description: Generic cluster template
+spec:
+  refreshInterval: 1
+  gitRepo: https://github.com/madestreel/rancher-cluster-template
+  gitBranch: master

@@ -1,0 +1,21 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Git repo containing all storage provioners for a cluster
+    name: storage-provioners
+    namespace: fleet-default
+spec:
+  branch: main
+  paths:
+    - storage-provioners
+  correctDrift:
+    enabled: true
+  #    force: boolean
+  #    keepFailHistory: boolean
+  insecureSkipTLSVerify: false
+  keepResources: false
+  pollingInterval: 15s
+  repo: https://github.com/madestreel/rancher-infra
+  targets:
+    - clusterSelector: {}
