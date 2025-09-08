@@ -1,0 +1,15 @@
+namespace: kube-system
+helm:
+  chart: kubernetes-replicator
+  repo: https://helm.mittwald.de
+  version: 2.12.0
+  releaseName: kubernetes-replicator
+  values:
+    args:
+      - --resync-period=5m
+      - --allow-all=true
+
+    serviceAccount:
+      privileges:
+        - apiGroups: ["", "apps", "extensions", "batch"]
+          resources: ["secrets", "configmaps"]

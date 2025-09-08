@@ -1,0 +1,14 @@
+defaultNamespace: kube-system
+helm:
+  releaseName: sealed-secrets
+  chart: sealed-secrets
+  repo: https://bitnami-labs.github.io/sealed-secrets
+  version: 2.17.4 # check latest available
+  values:
+    rbac:
+      create: true
+    serviceAccount:
+      create: true
+targetCustomizations:
+  - name: all-clusters
+    clusterSelector: {}
