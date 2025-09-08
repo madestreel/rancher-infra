@@ -8,9 +8,9 @@ metadata:
 spec:
   branch: main
   paths:
-    - apps/message-broker/config
-    - apps/message-broker/nats
     - apps/message-broker/nats-nui
+    - apps/message-broker/nats
+    - apps/message-broker/config
   correctDrift:
     enabled: true
   #    force: boolean
