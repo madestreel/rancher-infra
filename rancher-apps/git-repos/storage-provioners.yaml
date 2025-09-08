@@ -8,7 +8,7 @@ metadata:
 spec:
   branch: main
   paths:
-    - storage-provioners
+    - storage-provisioners
   correctDrift:
     enabled: true
   #    force: boolean
