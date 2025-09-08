@@ -1,0 +1,10 @@
+# rancher-monitoring-crd/fleet.yaml
+defaultNamespace: cattle-monitoring-system
+helm:
+  releaseName: rancher-monitoring-crd
+  chart: rancher-monitoring-crd
+  repo: https://charts.rancher.io
+  version: 107.2.0-rc.1+up69.8.2-rancher.15 # match your Rancher version
+targets:
+  - clusterSelector: {} # all clusters in this namespace
+

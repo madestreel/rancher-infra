@@ -2,13 +2,13 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
   annotations:
-    field.cattle.io/description: Git repo containing all storage provioners for a cluster
-  name: storage-provioners
+    field.cattle.io/description: Git repo containing all monitoring for a cluster
+  name: monitoring
   namespace: fleet-default
 spec:
   branch: main
   paths:
-    - rancher-apps/storage-provisioners
+    - rancher-apps/monitoring
   correctDrift:
     enabled: true
   #    force: boolean
