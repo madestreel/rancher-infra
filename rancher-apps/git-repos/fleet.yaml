@@ -1,0 +1,5 @@
+defaultNamespace: fleet-default
+
+targetCustomizations:
+  - name: management-cluster-only
+    clusterName: local

@@ -1,0 +1,9 @@
+apiVersion: catalog.cattle.io/v1
+kind: ClusterRepo
+metadata:
+  name: rancher-partner-charts
+  annotations:
+    field.cattle.io/description: Node Driver for Proxmox Virtual Environment
+spec:
+  refreshInterval: 1
+  url: https://stellatarum.github.io/docker-machine-driver-pve
