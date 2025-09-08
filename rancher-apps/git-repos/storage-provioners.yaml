@@ -3,8 +3,8 @@ kind: GitRepo
 metadata:
   annotations:
     field.cattle.io/description: Git repo containing all storage provioners for a cluster
-    name: storage-provioners
-    namespace: fleet-default
+  name: storage-provioners
+  namespace: fleet-default
 spec:
   branch: main
   paths:
