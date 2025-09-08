@@ -47,7 +47,7 @@ helm:
             value: /tmp
       deployment:
         patch:
-      ${ if hasKey .ClusterLabels "oam-node" }${ .ClusterLabels.LABELNAME }${ end}
+      ${ if hasKey .ClusterLabels "oam-node" }
           - op: add
             path: "/spec/template/spec/nodeSelector"
             value:
