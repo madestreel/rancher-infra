@@ -1,6 +1,5 @@
 defaultNamespace: d4sp-message-broker
 helm:
-  chart: .
   values:
     auth:
       enabled: true
