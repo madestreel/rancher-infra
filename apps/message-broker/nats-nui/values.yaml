@@ -1,0 +1,78 @@
+nameOverride: ""
+fullnameOverride: ""
+
+image:
+  repository: ghcr.io/nats-nui/nui
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+  imagePullSecrets: []
+replicaCount: 1
+nuiContainerSecurityContext: {}
+
+# Overrides the container command
+command: []
+
+podAnnotations: {}
+podLabels: {}
+podSecurityContext: {}
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  create: true
+  # Automatically mount a ServiceAccount's API credentials?
+  automount: true
+  # Annotations to add to the service account
+  annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  name: ""
+
+service:
+  type: ClusterIP
+  port: 31311
+
+ingress:
+  enabled: false
+  className: "nginx"
+  annotations: {}
+  hosts:
+    - host: nui.local
+      paths:
+        - path: /
+          pathType: ImplementationSpecific
+  tls: []
+
+resources: {}
+
+persistence:
+  storageClass: ""
+  size: ""
+  annotations: {}
+
+# Credentials files 
+credsVolume:
+  name: secret-creds-volume # Name of the Kubernetes Secret
+
+  # Add more files as needed. All the creds added are mapped into the /creds of the container
+  # and can be used from the UI with that path
+  items:
+    - key: creds1
+      path: creds1.creds
+
+# CLI contexts
+autoloadContexts: true
+contextsVolume:
+  name: secret-cli-contexts-volume # Name of the Kubernetes Secret
+
+  # Add more files as needed. All the creds added are mapped into the /cli-contexts of the container
+  # and they will be loaded at the container start if the autoLoadContexts is set to true
+  items:
+    - key: context1
+      path: context1.json
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

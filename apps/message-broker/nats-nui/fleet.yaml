@@ -1,8 +1,6 @@
 defaultNamespace: d4sp-message-broker
 helm:
-  chart: nui
-  repo: https://nats-nui.github.io/k8s/helm/charts
-  version: 0.1.4
+  chart: .
   releaseName: nats-nui
   values:
     image:
