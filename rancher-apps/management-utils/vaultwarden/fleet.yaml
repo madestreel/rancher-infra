@@ -5,6 +5,7 @@ helm:
   repo: https://guerzon.github.io/vaultwarden
   version: 0.34.3 # example, check latest
   values:
+    domain: "https://vaultwarden.escaux.com"
     adminToken:
       existingSecret: vaultwarden-admin
 targetCustomizations:
