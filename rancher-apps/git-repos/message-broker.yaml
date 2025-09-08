@@ -1,0 +1,21 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Git repo to deploy nats
+  name: message-broker
+  namespace: fleet-default
+spec:
+  branch: main
+  paths:
+    - apps/message-broker/config
+    - apps/message-broker/nats
+    - apps/message-broker/nats-nui
+  correctDrift:
+    enabled: true
+  #    force: boolean
+  #    keepFailHistory: boolean
+  pollingInterval: 15s
+  repo: https://github.com/madestreel/rancher-infra
+  targets:
+    - clusterSelector: {}
