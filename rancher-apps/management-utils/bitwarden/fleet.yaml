@@ -1,9 +1,0 @@
-defaultNamespace: bitwarden
-helm:
-  releaseName: bitwarden
-  chart: bitwarden
-  repo: https://charts.bitwarden.com
-  version: 0.6.2 # example, check latest
-targetCustomizations:
-  - name: local
-    clusterName: local

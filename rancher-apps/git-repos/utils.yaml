@@ -8,8 +8,8 @@ metadata:
 spec:
   branch: main
   paths:
-    - rancher-apps/utils
     - rancher-apps/management-utils
+    - rancher-apps/utils
   correctDrift:
     enabled: true
   #    force: boolean
