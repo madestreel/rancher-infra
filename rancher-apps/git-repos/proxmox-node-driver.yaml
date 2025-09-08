@@ -1,7 +1,7 @@
 apiVersion: catalog.cattle.io/v1
 kind: ClusterRepo
 metadata:
-  name: rancher-partner-charts
+  name: pve-node-driver
   annotations:
     field.cattle.io/description: Node Driver for Proxmox Virtual Environment
 spec:
