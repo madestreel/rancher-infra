@@ -1,0 +1,23 @@
+defaultNamespace: d4sp-message-broker
+helm:
+  chart: .
+  values:
+    auth:
+      enabled: true
+    users:
+      - username: nui
+        namespace: d4sp-message-broker
+      - username: uep-management-api
+        namespace: d4sp-scp
+      - username: user-location-service
+        namespace: d4sp-scp
+      - username: user-service-api
+        namespace: d4sp-scp
+      - username: scp-management-service
+        namespace: d4sp-scp
+      - username: consistency-role
+        namespace: d4sp-scp
+      - username: scp-cli
+        namespace: d4sp-scp
+      - username: scp-sticky-deployment-operator
+        namespace: d4sp-scp

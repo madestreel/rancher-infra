@@ -1,0 +1,66 @@
+defaultNamespace: d4sp-message-broker
+helm:
+  chart: nats
+  repo: https://nats-io.github.io/k8s/helm/charts/
+  version: 1.3.13
+  releaseName: nats
+  values:
+    global:
+      image:
+        registry: registry.gitlab.com/telepo/smg/artifactory
+        pullPolicy: IfNotPresent
+        pullSecretNames:
+          - registry-credentials
+    config:
+      cluster:
+        enabled: true
+      jetstream:
+        enabled: true
+        pvc:
+          storageClassName: longhorn
+      monitor:
+        enabled: true
+      merge:
+        auth$include: ../nats-auth-config/auth.conf
+
+    statefulSet:
+      patch:
+        - op: add
+          path: "/spec/template/spec/volumes/-"
+          value:
+            name: client-auths
+            secret:
+              secretName: nats-client-auth
+    container:
+      patch:
+        - op: add
+          path: "/volumeMounts/-"
+          value:
+            name: client-auths
+            readOnly: true
+            mountPath: /etc/nats-auth-config
+    natsBox:
+      container:
+        patch:
+          - op: add
+            path: "/workingDir"
+            value: /tmp
+      deployment:
+        patch:
+      ${ if hasKey .ClusterLabels "oam-node" }${ .ClusterLabels.LABELNAME }${ end}
+          - op: add
+            path: "/spec/template/spec/nodeSelector"
+            value:
+              oam-node: oam
+          - op: add
+            path: "/spec/template/spec/tolerations"
+            value:
+              - key: "oam-node"
+                operator: "Exists"
+                effect: "NoSchedule"
+      {{- end }}
+
+    promExporter:
+      enabled: true
+      podMonitor:
+        enabled: true
