@@ -1,4 +1,4 @@
-namespace: kube-system
+defaultNamespace: kube-system
 helm:
   chart: kubernetes-replicator
   repo: https://helm.mittwald.de
