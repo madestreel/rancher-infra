@@ -17,3 +17,23 @@ spec:
   repo: https://github.com/madestreel/rancher-infra
   targets:
     - clusterSelector: {}
+---
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Git repo containing all utils for a cluster
+  name: utils
+  namespace: fleet-default
+spec:
+  branch: main
+  paths:
+    - rancher-apps/utils
+  correctDrift:
+    enabled: true
+  #    force: boolean
+  #    keepFailHistory: boolean
+  pollingInterval: 15s
+  repo: https://github.com/madestreel/rancher-infra
+  targets:
+    - clusterSelector: {}

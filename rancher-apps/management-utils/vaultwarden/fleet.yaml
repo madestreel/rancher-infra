@@ -1,0 +1,12 @@
+defaultNamespace: vaultwarden
+helm:
+  releaseName: vaultwarden
+  chart: vaultwarden
+  repo: https://guerzon.github.io/vaultwarden-helm
+  version: 0.28.1 # example, check latest
+  values:
+    adminToken:
+      existingSecret: vaultwarden-admin
+targetCustomizations:
+  - name: local
+    clusterName: local
