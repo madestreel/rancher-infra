@@ -9,6 +9,7 @@ spec:
   branch: main
   paths:
     - rancher-apps/utils
+    - rancher-apps/management-utils
   correctDrift:
     enabled: true
   #    force: boolean
