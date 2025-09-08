@@ -20,5 +20,5 @@ spec:
   refreshInterval: 1
   gitRepo: https://github.com/madestreel/rancher-cluster-template
   gitBranch: master
-  paths:
-    - ./single-node-development
+  gitPaths:
+    - single-node-development
