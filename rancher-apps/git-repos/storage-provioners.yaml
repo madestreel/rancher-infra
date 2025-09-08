@@ -13,8 +13,6 @@ spec:
     enabled: true
   #    force: boolean
   #    keepFailHistory: boolean
-  insecureSkipTLSVerify: false
-  keepResources: false
   pollingInterval: 15s
   repo: https://github.com/madestreel/rancher-infra
   targets:
