@@ -1,0 +1,12 @@
+namespace: d4sp-csfe-core
+helm:
+  chart: git::https://gitlab.com/telepo/smg/gitops/modules-kubernetes//stacks/csfe-core/charts/csfe-core?ref=scp-develop
+  values:
+    app_versions:
+      csfe_core:
+        image:
+          tag: develop
+    cluster:
+      type: rancher
+    stack:
+      namespace: d4sp-csfe-core

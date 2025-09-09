@@ -1,0 +1,20 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Git repo to deploy the csfe
+  name: csfe
+  namespace: fleet-default
+spec:
+  branch: main
+  clientSecretName: gitlab-credentials
+  paths:
+    - apps/csfe-core
+  correctDrift:
+    enabled: true
+  #    force: boolean
+  #    keepFailHistory: boolean
+  pollingInterval: 15s
+  repo: https://github.com/madestreel/rancher-infra
+  targets:
+    - clusterSelector: {}
