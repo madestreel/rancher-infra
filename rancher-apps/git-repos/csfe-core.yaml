@@ -16,6 +16,6 @@ spec:
   pollingInterval: 15s
   repo: https://gitlab.com/telepo/devops/rancher-test
   clientSecretName: gitlab-credential
-  helmSecretName: gitlab-credential
+  helmSecretName: gitlab-ssh
   targets:
     - clusterSelector: {}
