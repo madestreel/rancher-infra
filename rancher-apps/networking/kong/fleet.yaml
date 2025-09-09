@@ -35,8 +35,8 @@ helm:
     proxy:
       #loadBalancerIP: {{ .Values.apps.kong.web.private_ip }}
       externalTrafficPolicy: Local
-      #annotations:
-      #  metallb.universe.tf/address-pool: {{ .Values | get "apps.kong.proxy.annotations.addressPool" "manual-lb-pool" }}
+      annotations:
+        metallb.universe.tf/address-pool: manual-lb-pool
       #stream:
       #{{/* utils-bastion */}}
       #- containerPort: 22222

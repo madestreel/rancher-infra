@@ -8,6 +8,7 @@ metadata:
 spec:
   branch: main
   paths:
+    - rancher-apps/networking/metallb/config
     - rancher-apps/networking/metallb
   correctDrift:
     enabled: true
