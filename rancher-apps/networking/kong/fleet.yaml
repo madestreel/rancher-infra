@@ -1,6 +1,9 @@
 defaultNamespace: d4sp-ingress
 helm:
-  chart: git::https://gitlab.com/telepo/smg/gitops/modules-kubernetes//stacks/csfe-core/charts/csfe-core?ref=main
+  chart: kong
+  repo: https://charts.konghq.com
+  releaseName: kong
+  version: 2.47.0
   values:
     image:
       repository: registry.gitlab.com/telepo/smg/artifactory/kong

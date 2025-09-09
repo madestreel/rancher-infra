@@ -14,8 +14,6 @@ spec:
   #    force: boolean
   #    keepFailHistory: boolean
   pollingInterval: 15s
-  repo: https://gitlab.com/telepo/devops/rancher-test
-  clientSecretName: gitlab-credential
-  helmSecretName: gitlab-ssh
+  repo: https://github.com/madestreel/rancher-infra
   targets:
     - clusterSelector: {}
