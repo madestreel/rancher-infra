@@ -7,7 +7,6 @@ metadata:
   namespace: fleet-default
 spec:
   branch: main
-  clientSecretName: gitlab-credentials
   paths:
     - apps/csfe-core
   correctDrift:
@@ -15,6 +14,6 @@ spec:
   #    force: boolean
   #    keepFailHistory: boolean
   pollingInterval: 15s
-  repo: git@gitlab.com:telepo/devops/rancher-test
+  repo: https://gitlab.com/telepo/devops/rancher-test
   targets:
     - clusterSelector: {}
