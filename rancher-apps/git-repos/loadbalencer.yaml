@@ -1,0 +1,19 @@
+apiVersion: fleet.cattle.io/v1alpha1
+kind: GitRepo
+metadata:
+  annotations:
+    field.cattle.io/description: Git repo containing the networking
+  name: networking
+  namespace: fleet-default
+spec:
+  branch: main
+  paths:
+    - rancher-apps/networking
+  correctDrift:
+    enabled: true
+  #    force: boolean
+  #    keepFailHistory: boolean
+  pollingInterval: 15s
+  repo: https://github.com/madestreel/rancher-infra
+  targets:
+    - clusterSelector: {}
