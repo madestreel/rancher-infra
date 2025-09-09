@@ -1,0 +1,76 @@
+defaultNamespace: d4sp-ingress
+helm:
+  chart: git::https://gitlab.com/telepo/smg/gitops/modules-kubernetes//stacks/csfe-core/charts/csfe-core?ref=main
+  values:
+    image:
+      repository: registry.gitlab.com/telepo/smg/artifactory/kong
+      tag: main--202501270849--7155bb84
+      effectiveSemver: 3.9.0
+      pullSecrets:
+        - registry-credentials
+
+    replicaCount: 1
+    admin:
+      enabled: false
+
+    manager:
+      enabled: false
+
+    ingressController:
+      image:
+        repository: registry.gitlab.com/telepo/smg/artifactory/mirror-kubernetes-ingress-controller
+        tag: 3.4.1
+      admissionWebhook:
+        enabled: false
+
+    updateStrategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxSurge: 0
+        maxUnavailable: 1
+
+    proxy:
+      #loadBalancerIP: {{ .Values.apps.kong.web.private_ip }}
+      externalTrafficPolicy: Local
+      #annotations:
+      #  metallb.universe.tf/address-pool: {{ .Values | get "apps.kong.proxy.annotations.addressPool" "manual-lb-pool" }}
+      #stream:
+      #{{/* utils-bastion */}}
+      #- containerPort: 22222
+      #  servicePort: 22222
+      #  protocol: TCP
+      #{{/* connectme */}}
+      #- containerPort: 22223
+      #  servicePort: 22223
+      #  protocol: TCP
+
+    udpProxy:
+      enabled: true
+      externalTrafficPolicy: Local
+      #annotations:
+      #  metallb.universe.tf/address-pool: manual-lb-pool
+      stream:
+        - containerPort: 53
+          servicePort: 53
+          protocol: UDP
+
+    env:
+      # upgraded to info now that we have tracing enabled
+      log_level: debug
+      plugins: "bundled,prometheus,scalable-rate-limiter,jwt-keycloak"
+      real_ip_recursive: on
+      real_ip_header: X-Forwarded-For
+      headers: "off"
+
+    serviceMonitor:
+      enabled: true
+
+    containerSecurityContext:
+      runAsGroup: 0
+      runAsNonRoot: false
+      runAsUser: 0
+      seccompProfile: {}
+      capabilities:
+        add:
+          - NET_BIND_SERVICE
+        drop: []
