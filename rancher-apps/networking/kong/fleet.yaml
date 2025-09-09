@@ -61,7 +61,7 @@ helm:
       # upgraded to info now that we have tracing enabled
       log_level: debug
       plugins: "bundled,prometheus,scalable-rate-limiter,jwt-keycloak"
-      real_ip_recursive: on
+      real_ip_recursive: "on"
       real_ip_header: X-Forwarded-For
       headers: "off"
 
