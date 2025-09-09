@@ -2,18 +2,20 @@ apiVersion: fleet.cattle.io/v1alpha1
 kind: GitRepo
 metadata:
   annotations:
-    field.cattle.io/description: Git repo containing the networking
-  name: networking
+    field.cattle.io/description: Git repo to deploy the kong
+  name: kong
   namespace: fleet-default
 spec:
   branch: main
   paths:
-    - rancher-apps/networking/metallb
+    - rancher-apps/networking/kong
   correctDrift:
     enabled: true
   #    force: boolean
   #    keepFailHistory: boolean
   pollingInterval: 15s
-  repo: https://github.com/madestreel/rancher-infra
+  repo: https://gitlab.com/telepo/devops/rancher-test
+  clientSecretName: gitlab-credential
+  helmSecretName: gitlab-ssh
   targets:
     - clusterSelector: {}
